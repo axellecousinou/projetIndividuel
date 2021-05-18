@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def log(request):
-    return redirect('accounts/login')
+    return redirect('community/newsfeed')
 
 
 @login_required()

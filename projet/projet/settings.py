@@ -124,4 +124,3 @@ STATICFILES_DIRS = (
 )
 
 LOGIN_REDIRECT_URL = 'newsfeed'
-LOGOUT_REDIRECT_URL = '/accounts/login'
