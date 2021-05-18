@@ -18,8 +18,7 @@ from django.urls import path, include
 from communitymanager import views
 
 urlpatterns = [
-    path('', views.log),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('community/', include('communitymanager.urls')),
+    path('', include('communitymanager.urls')),
 ]

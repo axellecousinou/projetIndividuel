@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des communautés</title>
+</head>
+<body>
+
+<table style="width:100%; margin:auto; padding:2%">
+  <tr>
+    <th>Communautés</th>
+  </tr>
+  {% for com in list %}
+  <tr>
+    <td>{{ com.nom }}</td>
+    {% if user in com.abonnes.all %}
+    <td><a href="{% url 'desabonnement' com.id %}" style="text-decoration: None;color:red;">Se désabonner</a></td>
+    {% else %}
+    <td><a href="{% url 'abonnement' com.id %}" style="text-decoration: None;color:black;">S'abonner</a></td>
+    {% endif %}
+  </tr>
+  {% endfor %}
+
+</table>
+
+</body>
+</html>
