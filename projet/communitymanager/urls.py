@@ -10,4 +10,6 @@ urlpatterns = [
     path('abonnement/<int:com_id>', views.abonnement, name='abonnement'),
     path('communaute/<int:com_id>', views.communaute, name='communaute'),
     path('post-details/<int:post_id>', views.post_details, name='details'),
+    path('create-post/', views.create_post, name='new-post'),
+    path('modif-post/<int:post_id>', views.modif_post, name='modif-post'),
 ]

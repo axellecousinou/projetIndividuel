@@ -10,17 +10,18 @@
 
 {% block titre %}
 <div class="jumbotron text-center" style="background-color:#DDE9FF;">
-    <h1>Posts de la communauté {{ com_name }}</h1>
+    <h1>Posts de la communauté {{ com.nom }}</h1>
 </div>
 {% endblock %}
 
 {% block content %}
+<a href="{% url 'new-post' %}">Créer un post</a>
 
 {% for post in list %}
 <div><a href="{% url 'details' post.id %}">{{ post.titre }}</a></br>
   {{ post.auteur }}
 </div>
-<button onclick="window.location.href = '';">Modifier</button>
+<a href="{% url 'modif-post' post.id %}">Modifier</a>
 {% endfor %}
 {% endblock %}
 </body>

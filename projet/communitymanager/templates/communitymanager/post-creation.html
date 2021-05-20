@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Créer un post</title>
+</head>
+<body>
+
+{% extends 'base.html' %}
+
+{% block titre %}
+<div class="jumbotron text-center" style="background-color:#DDE9FF;">
+    <h1>Nouveau post</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<p>
+  <form method="post" action=".">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" formaction="."/>
+  </form>
+</p>
+
+{% endblock %}
+</body>
+</html>
