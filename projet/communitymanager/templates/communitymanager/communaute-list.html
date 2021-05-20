@@ -12,7 +12,7 @@
   </tr>
   {% for com in list %}
   <tr>
-    <td>{{ com.nom }}</td>
+    <td><a href="{% url 'communaute' com.id %}">{{ com.nom }}</a></td>
     {% if user in com.abonnes.all %}
     <td><a href="{% url 'desabonnement' com.id %}" style="text-decoration: None;color:red;">Se désabonner</a></td>
     {% else %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Communauté</title>
+</head>
+<body>
+
+{% extends "base.html" %}
+
+{% block titre %}
+<div class="jumbotron text-center" style="background-color:#DDE9FF;">
+    <h1>Posts de la communauté {{ com_name }}</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+
+{% for post in list %}
+<div><a href="{% url 'details' post.id %}">{{ post.titre }}</a></br>
+  {{ post.auteur }}
+</div>
+<button onclick="window.location.href = '';">Modifier</button>
+{% endfor %}
+{% endblock %}
+</body>
+</html>

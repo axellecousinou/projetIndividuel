@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails d'un post</title>
+</head>
+<body>
+
+{% extends 'base.html' %}
+
+{% block titre %}
+<div class="jumbotron text-center" style="background-color:#DDE9FF;">
+    <h1>Post de la communauté {{ post.communaute.nom }}</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<h3>{{ post.titre }}</h3>
+
+<p>
+  Ecrit par {{post.auteur}}</br>
+  Description : </br>
+  {{post.description}}</br>
+  {{post.date_creation}}</br>
+  {% if post.evenementiel %}
+  Mettre un ptit calendrier avec la date de l'événement </br>
+  {{post.date_evenementiel}}</br>
+  {% endif %}
+</p>
+
+{% endblock %}
+
+</body>
+</html>

@@ -6,7 +6,17 @@
 </head>
 <body>
 
+{% extends "base.html" %}
+
+{% block titre %}
+<div class="jumbotron text-center" style="background-color:#DDE9FF;">
+    <h1>A bientôt !</h1>
+</div>
+{% endblock %}
+
+{% block content %}
 <button onclick="window.location.href = '../login';">Connect</button>
+{% endblock %}
 
 </body>
 </html>
