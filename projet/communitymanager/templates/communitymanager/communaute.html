@@ -21,7 +21,7 @@
 <div><a href="{% url 'details' post.id %}">{{ post.titre }}</a></br>
   {{ post.auteur }}
 </div>
-<a href="{% url 'modif-post' post.id %}">Modifier</a>
+<a href="{% url 'modif-post' post.id %}">Modifier</a> || <a href="{%url 'suppress-post' post.id %}">Supprimer</a>
 {% endfor %}
 {% endblock %}
 </body>

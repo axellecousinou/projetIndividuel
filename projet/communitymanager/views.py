@@ -87,3 +87,10 @@ def modif_post(request, post_id):
         form = NewPostForm(instance=p)
         return render(request, 'communitymanager/modify-post.html', locals())
 
+
+@login_required()
+def suppress_post(request, post_id):
+    post = Post.objects.get(id=post_id)
+    com_id = post.communaute.id
+    post.delete()
+    return redirect('communaute', com_id=com_id)
