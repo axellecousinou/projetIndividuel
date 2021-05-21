@@ -29,3 +29,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titre
+
+
+class Commentaire(models.Model):
+    date_creation = models.DateTimeField(blank=True)
+    contenu = models.TextField()
+    auteur = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
