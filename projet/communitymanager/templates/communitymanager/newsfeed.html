@@ -6,9 +6,20 @@
 </head>
 <body>
 
-<h1>COUCOUUUUUUU</h1>
+{% extends 'base.html' %}
 
-<button onclick="window.location.href = '../../accounts/logout';">Deconnect</button>
+{% block titre %}
+<h1>Newsfeed</h1>
+{% endblock %}
+
+{% block content %}
+
+{% for post in list %}
+<div><a href="{% url 'post' post.id %}">{{ post.titre }}</a></br>
+  {{ post.auteur }} || {{ post.date_creation }}
+</div>
+{% endfor %}
+{% endblock %}
 
 </body>
 </html>

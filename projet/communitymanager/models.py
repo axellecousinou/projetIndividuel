@@ -32,7 +32,7 @@ class Post(models.Model):
 
 
 class Commentaire(models.Model):
-    date_creation = models.DateTimeField(blank=True)
+    date_creation = models.DateTimeField()
     contenu = models.TextField()
     auteur = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)

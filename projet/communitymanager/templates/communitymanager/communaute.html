@@ -15,14 +15,22 @@
 {% endblock %}
 
 {% block content %}
-<a href="{% url 'new-post' %}">Créer un post</a>
+<a href="{% url 'nouveau-post' %}">Créer un post</a>
+
+{% if can_modif %}
+<p style="color:red;">Vous ne pouvez pas modifier ce post car vous n'en êtes pas l'auteur.</p>
+{% elif can_suppress %}
+<p style="color:red;">Vous ne pouvez pas supprimer ce post car vous n'en êtes pas l'auteur.</p>
+{% endif %}
+
 
 {% for post in list %}
-<div><a href="{% url 'details' post.id %}">{{ post.titre }}</a></br>
+<div><a href="{% url 'post' post.id %}">{{ post.titre }}</a></br>
   {{ post.auteur }}
 </div>
 <a href="{% url 'modif-post' post.id %}">Modifier</a> || <a href="{%url 'suppress-post' post.id %}">Supprimer</a>
 {% endfor %}
+
 {% endblock %}
 </body>
 </html>

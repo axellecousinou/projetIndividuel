@@ -5,11 +5,15 @@
     <title>Liste des communautés</title>
 </head>
 <body>
+{% extends 'base.html' %}
 
+{% block titre %}
+<h1>L'ensemble de nos communautés</h1>
+{% endblock %}
+
+{% block content %}
 <table style="width:100%; margin:auto; padding:2%">
-  <tr>
-    <th>Communautés</th>
-  </tr>
+
   {% for com in list %}
   <tr>
     <td><a href="{% url 'communaute' com.id %}">{{ com.nom }}</a></td>
@@ -22,6 +26,6 @@
   {% endfor %}
 
 </table>
-
+{% endblock %}
 </body>
 </html>

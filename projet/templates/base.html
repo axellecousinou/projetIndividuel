@@ -1,23 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Base</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/style.css"/>
+
 
 </head>
 <body>
-{% block titre %}
+
 <div class="jumbotron text-center" style="background-color:#DDE9FF;">
-    <h1>Bienvenu sur blabla</h1>
-    <h4>Connectez-vous pour accéder aux informations de vos communautés</h4>
+    {% block titre %}
+    {% endblock %}
+    {% block menu %}
+    <button onclick="window.location.href = '../../newsfeed';">Newsfeed</button>
+    <button onclick="window.location.href = '../../communautes';">Communautés</button>
+    <button onclick="window.location.href = '../nouveau_post';">Créer un post</button>
+    <button onclick="window.location.href = '../../accounts/logout';">Déconnexion</button>
+    {% endblock %}
 </div>
-{% endblock %}
 
 {% block content %}
 {% endblock %}

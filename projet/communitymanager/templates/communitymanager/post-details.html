@@ -29,6 +29,22 @@
   {% endif %}
 </p>
 
+<p>Commentaires :</br>
+    {% for comment in comments %}
+    {{comment.titre}}
+    {{comment.contenu}}
+    {{comment.auteur}} || {{comment.date_creation}}
+    </br>
+    {% endfor %}
+</p>
+
+<p>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit"/>
+  </form>
+</p>
 {% endblock %}
 
 </body>
