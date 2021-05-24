@@ -15,15 +15,29 @@
 </head>
 <body>
 
-<div class="jumbotron text-center" style="background-color:#DDE9FF;">
-    {% block titre %}
-    {% endblock %}
-    {% block menu %}
-    <button onclick="window.location.href = '../../newsfeed';">Newsfeed</button>
-    <button onclick="window.location.href = '../../communautes';">Communautés</button>
-    <button onclick="window.location.href = '../nouveau_post';">Créer un post</button>
-    <button onclick="window.location.href = '../../accounts/logout';">Déconnexion</button>
-    {% endblock %}
+<div class="jumbotron" style="background-color:#DDE9FF;padding:2% 0% 0% 0%;">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center" style="margin:3% 0% 0% 0%">
+            {% block titre %}
+            {% endblock %}
+            </div>
+        </div>
+        <div class="row align-right">
+            {% block disconnect %}
+            <div class="col-11"></div>
+            <a class="col-1" href="{% url 'logout' %}" style="margin:0% 0% 1% 0%"><img src="/static/image/disconnect.png" alt="Déconnexion" style="width:100%"/></a>
+            {% endblock %}
+        </div>
+        <div class="row">
+            {% block menu %}
+            <button class="col-lg-4" onclick="window.location.href = '../../newsfeed';">Newsfeed</button>
+            <button class="col-lg-4" onclick="window.location.href = '../../communautes';">Communautés</button>
+            <button class="col-lg-4" onclick="window.location.href = '../nouveau_post';">Créer un post</button>
+            {% endblock %}
+        </div>
+    </div>
 </div>
 
 {% block content %}

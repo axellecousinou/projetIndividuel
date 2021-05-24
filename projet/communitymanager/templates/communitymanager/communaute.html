@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Communauté</title>
 </head>
-<body>
 
 {% extends "base.html" %}
 
 {% block titre %}
-<div class="jumbotron text-center" style="background-color:#DDE9FF;">
-    <h1>Posts de la communauté {{ com.nom }}</h1>
-</div>
+<h1>Posts de la communauté {{ com.nom }}</h1>
 {% endblock %}
 
 {% block content %}
@@ -32,5 +26,3 @@
 {% endfor %}
 
 {% endblock %}
-</body>
-</html>

@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Logout</title>
+    <title>Déconnexion</title>
 </head>
-<body>
 
 {% extends "base.html" %}
 
 {% block titre %}
-<div class="jumbotron text-center" style="background-color:#DDE9FF;">
+<div style="margin:0% 0% 5% 0%">
     <h1>A bientôt !</h1>
 </div>
+{% endblock %}
+
+{% block disconnect %}
 {% endblock %}
 
 {% block menu %}
@@ -20,6 +19,3 @@
 {% block content %}
 <button onclick="window.location.href = '../login';">Connect</button>
 {% endblock %}
-
-</body>
-</html>
