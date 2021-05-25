@@ -1,12 +1,13 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Base</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/style.css"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -15,28 +16,32 @@
 </head>
 <body>
 
-<div class="jumbotron" style="background-color:#DDE9FF;padding:2% 0% 0% 0%;">
+<div class="jumbotron head">
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 text-center" style="margin:3% 0% 0% 0%">
-            {% block titre %}
-            {% endblock %}
-            </div>
+        <div class="col-12 text-center titre">
+        {% block titre %}
+        {% endblock %}
         </div>
         <div class="row align-right">
             {% block disconnect %}
             <div class="col-11"></div>
-            <a class="col-1" href="{% url 'logout' %}" style="margin:0% 0% 1% 0%"><img src="/static/image/disconnect.png" alt="Déconnexion" style="width:100%"/></a>
+            <a class="col-1" href="{% url 'logout' %}" style="padding:3%"><img src="/static/image/disconnect.png" alt="Déconnexion" style="width:100%"/></a>
             {% endblock %}
         </div>
-        <div class="row">
-            {% block menu %}
-            <button class="col-lg-4" onclick="window.location.href = '../../newsfeed';">Newsfeed</button>
-            <button class="col-lg-4" onclick="window.location.href = '../../communautes';">Communautés</button>
-            <button class="col-lg-4" onclick="window.location.href = '../nouveau_post';">Créer un post</button>
-            {% endblock %}
-        </div>
+        {% block menu %}
+        <ul class="col-12 nav nav-tabs nav-justified">
+            <li class="nav-item">
+              <a class="nav-link" href="../newsfeed">Newsfeed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../communautes">Communautés</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../nouveau_post">Créer un post</a>
+            </li>
+        </ul>
+        {% endblock %}
     </div>
 </div>
 

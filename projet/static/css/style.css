@@ -1,5 +1,12 @@
+.head {
+    background-color:#DDE9FF;
+    padding:2% 0% 0% 0%;
+}
 
-.button {
-    padding:0.2rem 0.5rem;
-    margin:1rem
+.titre{
+    margin:3% 0% 0% 0%
+}
+
+div button {
+    padding: 0.6% 0%;
 }
