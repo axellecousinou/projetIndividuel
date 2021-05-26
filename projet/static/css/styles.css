@@ -20,7 +20,14 @@ div button {
 .post {
     background-color: #FBF5EC;
     margin: 2% auto;
-    padding: 1% 3%;
+    padding: 0% 3%;
+    border: solid;
+    border-color:lightgrey;
+}
+
+.comment {
+    background-color: #FBF5EC;
+    padding: 0% 3%;
     border: solid;
     border-color:lightgrey;
 }

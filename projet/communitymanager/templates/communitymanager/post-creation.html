@@ -24,12 +24,49 @@
 
 {% block content %}
 
-<p>
-  <form method="post" action=".">
+<div class="container-fluid">
+  <form class="col-6" style="margin:auto;" method="post" action=".">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" formaction="."/>
+      <div class="form-inline" style="margin:5%">
+          <label for="id_communaute">Communaute </label>
+          <select class="form-control" id="id_communaute" name="communaute" required>
+              <option></option>
+              {% for commu in communautes %}
+              <option value="{{ commu.id }}">{{ commu }}</option>
+              {% endfor %}
+          </select>
+      </div>
+    <div class="form-inline" style="margin: 5%">
+        <label class="mr-sm-2" for="id_titre">Titre </label>
+        <input type="text" class="form-control" id="id_titre" name="titre" required/>
+    </div>
+    <div class="form-inline" style="margin: 5%">
+        <label class="mr-sm-2" for="id_description">Description </label>
+        <textarea class="form-control" rows="5" cols="50" id="id_description" name="description" required></textarea>
+    </div>
+      <div class="form-inline" style="margin: 5%">
+        <label for="id_evenementiel">Est-ce une événement ? </label>
+        <input type="checkbox" class="a" id="id_evenementiel" name="evenementiel"/>
+    </div>
+    <div class="form-inline" style="margin: 5%">
+        {% if trop_tot %}
+        <p style="color:red">La date est invalide</p>
+        {% endif %}
+        <label class="mr-sm-2" for="id_date_evenement">Date de l'événement </label>
+        <input type="datetime-local" id="id_date_evenement" name="date_evenement"/>
+    </div>
+    <div class="form-inline" style="margin: 5%">
+        <label class="mr-sm-2" for="id_priorite">Priorité </label>
+        <select class="form-control" id="id_priorite" name="priorite" required>
+            {% for priorite in prio %}
+            <option value="{{ priorite.id }}">{{ priorite }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="text-center">
+        <input type="submit" value="Envoyer" style="margin:5%">
+    </div>
   </form>
-</p>
+</div>
 
 {% endblock %}

@@ -10,26 +10,24 @@
 
 {% block content %}
 
-<h3>{{ post.titre }}</h3>
+<div class="post">
+    <p class="col-8"><span class="titrepost">{{ post.titre }}</span> par {{post.auteur}}</p>
 
 <p>
-  Ecrit par {{post.auteur}}</br>
-  Description : </br>
   {{post.description}}</br>
-  {{post.date_creation}}</br>
   {% if post.evenementiel %}
   Mettre un ptit calendrier avec la date de l'événement </br>
   {{post.date_evenementiel}}</br>
   {% endif %}
 </p>
 
-<p>Commentaires :</br>
+<p style="font-weight: bold">Commentaires :</p>
+    <div class="comment">
     {% for comment in comments %}
-    {{comment.titre}}
-    {{comment.contenu}}
-    {{comment.auteur}} || {{comment.date_creation}}
-    </br>
+    <p style="font-weight: bold">{{ comment.auteur }} le {{comment.date_creation}}</p>
+        <p style="margin-left: 5%">{{ comment.contenu }}</p>
     {% endfor %}
+    </div>
 </p>
 
 <p>
@@ -39,4 +37,6 @@
     <input type="submit"/>
   </form>
 </p>
+</div>
+
 {% endblock %}

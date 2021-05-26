@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Communaute
 from .models import Post
 from .models import Commentaire
+from .models import Priorite
 from .forms import NewPostForm
 from .forms import NewCommentForm
 from datetime import datetime
@@ -20,7 +21,6 @@ def newsfeed(request):
         l = Post.objects.filter(communaute=com).order_by('date_creation').reverse()
         for p in l:
             list.append(p)
-
     return render(request, 'communitymanager/newsfeed.html', locals())
 
 
@@ -73,13 +73,20 @@ def post(request, post_id):
 @login_required()
 def nouveau_post(request):
     form = NewPostForm(request.POST or None)
+    prio = Priorite.objects.all()
+    communautes = request.user.communaute_set.all()
     if form.is_valid():
         post = form.save(commit=False)
+        post.evenementiel, post.date_evenement = form.clean_evenement_date(request)
         post.date_creation = datetime.now()
         post.auteur = request.user
-        post.save()
-
-        return redirect('communaute', com_id=post.communaute.id)
+        print(post.date_evenement)
+        try :
+            post.save()
+            return redirect('communaute', com_id=post.communaute.id)
+        except:
+            date = True
+            return render(request, 'communitymanager/post-creation.html', locals())
 
     return render(request, 'communitymanager/post-creation.html', locals())
 
@@ -114,3 +121,30 @@ def suppress_post(request, post_id):
         list = Post.objects.filter(communaute=Communaute.objects.get(id=Post.objects.get(id=post_id).communaute.id))
         can_suppress = True
         return render(request, 'communitymanager/communaute.html', locals())
+
+
+@login_required()
+def voir_commentaires(request, post_id):
+    post = Post.objects.get(id=post_id)
+    commentaires = Commentaire.objects.filter(post=post)
+    voir_comm = True
+    communautes = request.user.communaute_set.all()
+    list = []
+    for com in communautes:
+        l = Post.objects.filter(communaute=com).order_by('date_creation').reverse()
+        for p in l:
+            list.append(p)
+    return render(request, 'communitymanager/newsfeed.html', locals())
+
+
+@login_required()
+def post_commentaire(request, post_id):
+    form = NewCommentForm(request.POST or None)
+    if form.is_valid():
+        commentaire = form.save(commit=False)
+        commentaire.auteur = request.user
+        commentaire.date_creation = datetime.now()
+        commentaire.post = get_object_or_404(Post, id=post_id)
+        commentaire.save()
+        return redirect('voir-commentaires', post_id=post_id)
+    return render(request, 'communitymanager/newsfeed.html', locals())

@@ -24,9 +24,23 @@
 
 {% block content %}
 {% for post in list %}
-<div class="post col-11"><p class="float-left col-8"><a class="titrepost" href="{% url 'post' post.id %}">{{ post.titre }}</a> par {{ post.auteur }}</p>
+<div class="post col-11">
+    <p class="col-push-9 text-right">{{ post.date_creation }}</p>
+    <p class="col-8"><a class="titrepost" href="{% url 'post' post.id %}">{{ post.titre }}</a> par {{ post.auteur }}</p>
     <p class="col-8">{{ post.description }}</p>
-    <p class="col-push-6 text-right">{{ post.date_creation }}</p>
+    {% if voir_comm and post.id == post_id %}
+    <a href="{% url 'newsfeed' %}">Masquer les commentaires</a>
+    <div class="comment col-10">
+        {% for comment in commentaires %}
+        <p style="margin-bottom:0%">{{ comment.auteur }} le {{ post.date_creation }}</p>
+        <p style="margin-left:5%">{{ comment.contenu }}</p>
+        {% endfor %}
+    </div>
+    {% else %}
+    <a href="{% url 'voir-commentaires' post.id %}">Afficher les commentaires</a>
+    {% endif %}
+
 </div>
 {% endfor %}
+
 {% endblock %}
