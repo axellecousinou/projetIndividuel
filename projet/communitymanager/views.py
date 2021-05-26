@@ -17,7 +17,7 @@ def newsfeed(request):
     communautes = request.user.communaute_set.all()
     list = []
     for com in communautes:
-        l = Post.objects.filter(communaute=com)
+        l = Post.objects.filter(communaute=com).orderby()
         for p in l:
             list.append(p)
 

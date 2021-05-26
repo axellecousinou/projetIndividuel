@@ -9,7 +9,6 @@
 {% endblock %}
 
 {% block content %}
-<a href="{% url 'nouveau-post' %}">Créer un post</a>
 
 {% if can_modif %}
 <p style="color:red;">Vous ne pouvez pas modifier ce post car vous n'en êtes pas l'auteur.</p>
@@ -19,10 +18,11 @@
 
 
 {% for post in list %}
-<div><a href="{% url 'post' post.id %}">{{ post.titre }}</a></br>
-  {{ post.auteur }}
+<div class="post col-11"><p class="float-left col-8"><a class="titrepost" href="{% url 'post' post.id %}">{{ post.titre }}</a> par {{ post.auteur }}</p>
+    <p class="col-8">{{ post.description }}</p>
+    <a href="{% url 'modif-post' post.id %}">Modifier</a> || <a href="{%url 'suppress-post' post.id %}"><i class="fas fa-times"></i></a>
+    <p class="col-push-6 text-right">{{ post.date_creation }}</p>
 </div>
-<a href="{% url 'modif-post' post.id %}">Modifier</a> || <a href="{%url 'suppress-post' post.id %}">Supprimer</a>
 {% endfor %}
 
 {% endblock %}
