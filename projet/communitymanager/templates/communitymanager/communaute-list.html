@@ -7,19 +7,27 @@
 <h1>L'ensemble de nos communautés</h1>
 {% endblock %}
 
+<!-- Il est nécessaire de réécrire le block menu car l'un des onglets est désormais actif -->
 {% block menu %}
 <ul class="col-12 nav nav-tabs nav-justified">
+
     <li class="nav-item">
       <a class="nav-link" href="../newsfeed">Newsfeed</a>
     </li>
+
     <li class="nav-item">
       <a class="nav-link active" href="../communautes">Communautés</a>
     </li>
+
     <li class="nav-item">
       <a class="nav-link" href="../nouveau_post">Créer un post</a>
     </li>
+
 </ul>
 {% endblock %}
+
+
+
 
 {% block content %}
 <table class="table col-4 text-center" style="font-size:20px; margin:auto;">
@@ -27,11 +35,14 @@
   {% for com in list %}
   <tr>
     <td><a href="{% url 'communaute' com.id %}">{{ com.nom }}</a></td>
+
+      <!-- L'affichage du coeur dépend de si l'utilisateur est abonné ou non -->
     {% if user in com.abonnes.all %}
     <td><a href="{% url 'desabonnement' com.id %}" style="text-decoration: None;color:red;"><i class="fas fa-heart" style="color:red;"></i></a></td>
     {% else %}
     <td><a href="{% url 'abonnement' com.id %}" style="text-decoration: None;color:black;"><i class="far fa-heart" style="color:red;"></i></a></td>
     {% endif %}
+
   </tr>
   {% endfor %}
 

@@ -8,33 +8,46 @@
 <h1>Newsfeed</h1>
 {% endblock %}
 
+<!-- Il est nécessaire de réécrire le block menu car l'un des onglets est désormais actif -->
 {% block menu %}
 <ul class="col-12 nav nav-tabs nav-justified">
+
     <li class="nav-item">
       <a class="nav-link active" href="../newsfeed">Newsfeed</a>
     </li>
+
     <li class="nav-item">
       <a class="nav-link" href="../communautes">Communautés</a>
     </li>
+
     <li class="nav-item">
       <a class="nav-link" href="../nouveau_post">Créer un post</a>
     </li>
+
 </ul>
 {% endblock %}
 
 {% block content %}
+
 {% for post in list %}
+
 <div class="post col-11">
+
     <p class="col-push-9 text-right">{{ post.date_creation }}</p>
     <p class="col-8"><a class="titrepost" href="{% url 'post' post.id %}">{{ post.titre }}</a> par {{ post.auteur }}</p>
     <p class="col-8">{{ post.description }}</p>
+
+    <!-- Si l'on a demandé à voir les commentaires de ce post en particulier... -->
     {% if voir_comm and post.id == post_id %}
     <a href="{% url 'newsfeed' %}">Masquer les commentaires</a>
     <div class="comment col-10">
+
+        <!-- Alors on affiche chacun d'entre eux en dessous du post -->
         {% for comment in commentaires %}
-        <p style="margin-bottom:0%">{{ comment.auteur }} le {{ post.date_creation }}</p>
+        <p style="margin-bottom:0%; font-weight: bold">{{ comment.auteur }} le {{ post.date_creation }}</p>
         <p style="margin-left:5%">{{ comment.contenu }}</p>
         {% endfor %}
+
     </div>
     {% else %}
     <a href="{% url 'voir-commentaires' post.id %}">Afficher les commentaires</a>

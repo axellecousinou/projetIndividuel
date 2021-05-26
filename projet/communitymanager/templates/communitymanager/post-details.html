@@ -11,32 +11,34 @@
 {% block content %}
 
 <div class="post">
-    <p class="col-8"><span class="titrepost">{{ post.titre }}</span> par {{post.auteur}}</p>
+    <p class="col-8"><span class="titrepost">{{ post.titre }}</span> par {{ post.auteur }}</p>
 
-<p>
-  {{post.description}}</br>
-  {% if post.evenementiel %}
-  Mettre un ptit calendrier avec la date de l'événement </br>
-  {{post.date_evenementiel}}</br>
-  {% endif %}
-</p>
+    <!-- Affiche les informations du post -->
+    <p>
+      {{ post.description }}</br>
+      {% if post.evenementiel %}
+      Date de l'événement : {{post.date_evenement}}</br>
+      {% endif %}
+    </p>
 
-<p style="font-weight: bold">Commentaires :</p>
-    <div class="comment">
-    {% for comment in comments %}
-    <p style="font-weight: bold">{{ comment.auteur }} le {{comment.date_creation}}</p>
-        <p style="margin-left: 5%">{{ comment.contenu }}</p>
-    {% endfor %}
-    </div>
-</p>
+    <!-- Affiche les commentaires de ce post -->
+    <p style="font-weight: bold">Commentaires :</p>
+        <div class="comment">
+        {% for comment in comments %}
+        <p style="font-weight: bold">{{ comment.auteur }} le {{comment.date_creation}}</p>
+            <p style="margin-left: 5%">{{ comment.contenu }}</p>
+        {% endfor %}
+        </div>
+    </p>
 
-<p>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit"/>
-  </form>
-</p>
+    <!-- Permet l'ajout de nouveaux commentaires -->
+    <p>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit"/>
+      </form>
+    </p>
 </div>
 
 {% endblock %}

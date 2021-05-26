@@ -14,10 +14,11 @@ class NewPostForm(forms.ModelForm):
         exclude = ('date_creation', 'auteur', 'evenementiel', 'date_evenement')
 
     def clean_evenement_date(self, request):
+        #Le format de la date n'est désormais plus le bon et il faut donc le remettre au bon format pour qu'il
+        # soit accepté lors de la sauvegarde de l'objet
         if request.POST.get('evenementiel'):
             evenementiel = True
             date = request.POST.get('date_evenement')
-            print(date)
             date_evenement = ""
             for i in range(len(date)):
                 if date[i] == 'T':

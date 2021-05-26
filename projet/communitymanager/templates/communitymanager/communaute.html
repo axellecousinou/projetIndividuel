@@ -16,7 +16,7 @@
 <p style="color:red;">Vous ne pouvez pas supprimer ce post car vous n'en êtes pas l'auteur.</p>
 {% endif %}
 
-
+<!-- Affichage des posts un à un de la liste fournie (dont la communauté est celle correspondant à l'identifiant) -->
 {% for post in list %}
 <div class="post col-11">
     <p class="col-push-6 text-right">{{ post.date_creation }}</p>
