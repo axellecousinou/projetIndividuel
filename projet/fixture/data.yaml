@@ -1,0 +1,487 @@
+- model: communitymanager.priorite
+  pk: 1
+  fields:
+    label: blanche
+- model: communitymanager.priorite
+  pk: 2
+  fields:
+    label: jaune
+- model: communitymanager.priorite
+  pk: 3
+  fields:
+    label: orange
+- model: communitymanager.priorite
+  pk: 4
+  fields:
+    label: rouge
+- model: communitymanager.priorite
+  pk: 5
+  fields:
+    label: "\xE9carlate"
+- model: auth.permission
+  pk: 1
+  fields:
+    name: Can add log entry
+    content_type: 1
+    codename: add_logentry
+- model: auth.permission
+  pk: 2
+  fields:
+    name: Can change log entry
+    content_type: 1
+    codename: change_logentry
+- model: auth.permission
+  pk: 3
+  fields:
+    name: Can delete log entry
+    content_type: 1
+    codename: delete_logentry
+- model: auth.permission
+  pk: 4
+  fields:
+    name: Can view log entry
+    content_type: 1
+    codename: view_logentry
+- model: auth.permission
+  pk: 5
+  fields:
+    name: Can add permission
+    content_type: 2
+    codename: add_permission
+- model: auth.permission
+  pk: 6
+  fields:
+    name: Can change permission
+    content_type: 2
+    codename: change_permission
+- model: auth.permission
+  pk: 7
+  fields:
+    name: Can delete permission
+    content_type: 2
+    codename: delete_permission
+- model: auth.permission
+  pk: 8
+  fields:
+    name: Can view permission
+    content_type: 2
+    codename: view_permission
+- model: auth.permission
+  pk: 9
+  fields:
+    name: Can add group
+    content_type: 3
+    codename: add_group
+- model: auth.permission
+  pk: 10
+  fields:
+    name: Can change group
+    content_type: 3
+    codename: change_group
+- model: auth.permission
+  pk: 11
+  fields:
+    name: Can delete group
+    content_type: 3
+    codename: delete_group
+- model: auth.permission
+  pk: 12
+  fields:
+    name: Can view group
+    content_type: 3
+    codename: view_group
+- model: auth.permission
+  pk: 13
+  fields:
+    name: Can add user
+    content_type: 4
+    codename: add_user
+- model: auth.permission
+  pk: 14
+  fields:
+    name: Can change user
+    content_type: 4
+    codename: change_user
+- model: auth.permission
+  pk: 15
+  fields:
+    name: Can delete user
+    content_type: 4
+    codename: delete_user
+- model: auth.permission
+  pk: 16
+  fields:
+    name: Can view user
+    content_type: 4
+    codename: view_user
+- model: auth.permission
+  pk: 17
+  fields:
+    name: Can add content type
+    content_type: 5
+    codename: add_contenttype
+- model: auth.permission
+  pk: 18
+  fields:
+    name: Can change content type
+    content_type: 5
+    codename: change_contenttype
+- model: auth.permission
+  pk: 19
+  fields:
+    name: Can delete content type
+    content_type: 5
+    codename: delete_contenttype
+- model: auth.permission
+  pk: 20
+  fields:
+    name: Can view content type
+    content_type: 5
+    codename: view_contenttype
+- model: auth.permission
+  pk: 21
+  fields:
+    name: Can add session
+    content_type: 6
+    codename: add_session
+- model: auth.permission
+  pk: 22
+  fields:
+    name: Can change session
+    content_type: 6
+    codename: change_session
+- model: auth.permission
+  pk: 23
+  fields:
+    name: Can delete session
+    content_type: 6
+    codename: delete_session
+- model: auth.permission
+  pk: 24
+  fields:
+    name: Can view session
+    content_type: 6
+    codename: view_session
+- model: auth.permission
+  pk: 25
+  fields:
+    name: Can add profil
+    content_type: 7
+    codename: add_profil
+- model: auth.permission
+  pk: 26
+  fields:
+    name: Can change profil
+    content_type: 7
+    codename: change_profil
+- model: auth.permission
+  pk: 27
+  fields:
+    name: Can delete profil
+    content_type: 7
+    codename: delete_profil
+- model: auth.permission
+  pk: 28
+  fields:
+    name: Can view profil
+    content_type: 7
+    codename: view_profil
+- model: auth.permission
+  pk: 29
+  fields:
+    name: Can add community
+    content_type: 8
+    codename: add_community
+- model: auth.permission
+  pk: 30
+  fields:
+    name: Can change community
+    content_type: 8
+    codename: change_community
+- model: auth.permission
+  pk: 31
+  fields:
+    name: Can delete community
+    content_type: 8
+    codename: delete_community
+- model: auth.permission
+  pk: 32
+  fields:
+    name: Can view community
+    content_type: 8
+    codename: view_community
+- model: auth.permission
+  pk: 33
+  fields:
+    name: Can add posts
+    content_type: 9
+    codename: add_posts
+- model: auth.permission
+  pk: 34
+  fields:
+    name: Can change posts
+    content_type: 9
+    codename: change_posts
+- model: auth.permission
+  pk: 35
+  fields:
+    name: Can delete posts
+    content_type: 9
+    codename: delete_posts
+- model: auth.permission
+  pk: 36
+  fields:
+    name: Can view posts
+    content_type: 9
+    codename: view_posts
+- model: auth.permission
+  pk: 37
+  fields:
+    name: Can add communite
+    content_type: 10
+    codename: add_communite
+- model: auth.permission
+  pk: 38
+  fields:
+    name: Can change communite
+    content_type: 10
+    codename: change_communite
+- model: auth.permission
+  pk: 39
+  fields:
+    name: Can delete communite
+    content_type: 10
+    codename: delete_communite
+- model: auth.permission
+  pk: 40
+  fields:
+    name: Can view communite
+    content_type: 10
+    codename: view_communite
+- model: auth.permission
+  pk: 41
+  fields:
+    name: Can add communaute
+    content_type: 11
+    codename: add_communaute
+- model: auth.permission
+  pk: 42
+  fields:
+    name: Can change communaute
+    content_type: 11
+    codename: change_communaute
+- model: auth.permission
+  pk: 43
+  fields:
+    name: Can delete communaute
+    content_type: 11
+    codename: delete_communaute
+- model: auth.permission
+  pk: 44
+  fields:
+    name: Can view communaute
+    content_type: 11
+    codename: view_communaute
+- model: auth.permission
+  pk: 45
+  fields:
+    name: Can add post
+    content_type: 12
+    codename: add_post
+- model: auth.permission
+  pk: 46
+  fields:
+    name: Can change post
+    content_type: 12
+    codename: change_post
+- model: auth.permission
+  pk: 47
+  fields:
+    name: Can delete post
+    content_type: 12
+    codename: delete_post
+- model: auth.permission
+  pk: 48
+  fields:
+    name: Can view post
+    content_type: 12
+    codename: view_post
+- model: auth.permission
+  pk: 49
+  fields:
+    name: Can add priorite
+    content_type: 13
+    codename: add_priorite
+- model: auth.permission
+  pk: 50
+  fields:
+    name: Can change priorite
+    content_type: 13
+    codename: change_priorite
+- model: auth.permission
+  pk: 51
+  fields:
+    name: Can delete priorite
+    content_type: 13
+    codename: delete_priorite
+- model: auth.permission
+  pk: 52
+  fields:
+    name: Can view priorite
+    content_type: 13
+    codename: view_priorite
+- model: auth.permission
+  pk: 53
+  fields:
+    name: Can add commentaire
+    content_type: 14
+    codename: add_commentaire
+- model: auth.permission
+  pk: 54
+  fields:
+    name: Can change commentaire
+    content_type: 14
+    codename: change_commentaire
+- model: auth.permission
+  pk: 55
+  fields:
+    name: Can delete commentaire
+    content_type: 14
+    codename: delete_commentaire
+- model: auth.permission
+  pk: 56
+  fields:
+    name: Can view commentaire
+    content_type: 14
+    codename: view_commentaire
+- model: auth.user
+  pk: 1
+  fields:
+    password: pbkdf2_sha256$120000$2EaIOdJPl0Z9$dNwXZN9on1reKLKOhwH33+/iTwtK6Pb7sEOQzxSazs0=
+    last_login: 2021-05-26 19:25:48.264000+00:00
+    is_superuser: false
+    username: Axelle
+    first_name: ''
+    last_name: ''
+    email: axelle.cousinou@student.isae-supaero.fr
+    is_staff: false
+    is_active: true
+    date_joined: 2021-05-17 16:06:00.799000+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 2
+  fields:
+    password: pbkdf2_sha256$120000$hd2DtxntTsnp$pulpvNsoV5mjhGeZHpWNBpY6Bddsc9uzLl1aQkUayEY=
+    last_login: null
+    is_superuser: true
+    username: axelle
+    first_name: ''
+    last_name: ''
+    email: axelle.cous99@gmail.com
+    is_staff: true
+    is_active: true
+    date_joined: 2021-05-22 10:44:39.334000+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 4
+  fields:
+    password: pbkdf2_sha256$120000$ZvJtEKgwDQLO$/b+n35ht3vpxh9aoUWwNTd9kJNilF/k2mD37JoC0CsU=
+    last_login: 2021-05-25 10:00:46.215000+00:00
+    is_superuser: false
+    username: Gabgab
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: false
+    is_active: true
+    date_joined: 2021-05-22 14:37:18.954000+00:00
+    groups: []
+    user_permissions: []
+- model: communitymanager.commentaire
+  pk: 1
+  fields:
+    date_creation: 2021-05-26 20:59:21.386000+00:00
+    contenu: coucou tua
+    auteur: 4
+    post: 6
+- model: communitymanager.commentaire
+  pk: 2
+  fields:
+    date_creation: 2021-05-26 21:01:19.869000+00:00
+    contenu: ert
+    auteur: 4
+    post: 7
+- model: communitymanager.commentaire
+  pk: 3
+  fields:
+    date_creation: 2021-05-26 21:17:24.517000+00:00
+    contenu: etrhyju,j
+    auteur: 4
+    post: 7
+- model: communitymanager.commentaire
+  pk: 4
+  fields:
+    date_creation: 2021-05-26 23:58:32.249000+00:00
+    contenu: df
+    auteur: 1
+    post: 6
+- model: communitymanager.commentaire
+  pk: 5
+  fields:
+    date_creation: 2021-05-27 00:15:26.924000+00:00
+    contenu: qsdf
+    auteur: 1
+    post: 10
+- model: communitymanager.post
+  pk: 6
+  fields:
+    titre: zertyt
+    description: erttyku
+    date_creation: 2021-05-22 16:20:36.999000+00:00
+    communaute: 2
+    priorite: 1
+    evenementiel: false
+    date_evenement: null
+    auteur: 1
+- model: communitymanager.post
+  pk: 7
+  fields:
+    titre: zfrgetr
+    description: zrgethrnh gnb
+    date_creation: 2021-05-22 16:38:23.650000+00:00
+    communaute: 2
+    priorite: 3
+    evenementiel: false
+    date_evenement: null
+    auteur: 4
+- model: communitymanager.post
+  pk: 10
+  fields:
+    titre: s
+    description: s
+    date_creation: 2021-05-26 23:21:58.159000+00:00
+    communaute: 2
+    priorite: 1
+    evenementiel: true
+    date_evenement: 2021-06-05 23:21:00+00:00
+    auteur: 1
+- model: communitymanager.post
+  pk: 11
+  fields:
+    titre: rgeth'yju
+    description: zeazre
+    date_creation: 2021-05-26 23:28:38.125000+00:00
+    communaute: 2
+    priorite: 1
+    evenementiel: true
+    date_evenement: 2021-06-05 23:28:00+00:00
+    auteur: 1
+- model: communitymanager.communaute
+  pk: 2
+  fields:
+    nom: communaute1
+    abonnes:
+    - 1
+    - 4
